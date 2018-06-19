@@ -4,6 +4,7 @@ body {
 
 nav {
   background: white;
+  z-index: 1000;
 }
 
 nav a {
@@ -79,4 +80,26 @@ nav a {
 .btn-social {
   background-color: none !important;
   padding: 2px 10px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .brand-logo {
+    font-size: 16px !important;
+    left: 35% !important;
+  }
+  .sidenav-trigger {
+    float: left;
+    margin-top: -55px !important;
+    margin-left: -20px !important;
+    z-index: 2000;
+  }
+  nav {
+    padding-left: 10% !important;
+  }
+  #technology {
+    padding: 20px !important;
+  }
+  .section-heading {
+    padding: 20px 0 30px 0 !important;
+  }
 }

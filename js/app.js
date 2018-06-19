@@ -1,7 +1,7 @@
 instances = null;
 document.addEventListener('DOMContentLoaded', function() {
     var elem_sidenav = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(elem_sidenav,{edge:'right'});
+    M.Sidenav.init(elem_sidenav,{edge:'left'});
 
     var elem_scroll = document.querySelectorAll('.scrollspy');
     M.ScrollSpy.init(elem_scroll);
