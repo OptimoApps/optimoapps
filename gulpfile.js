@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
 var pkg = require('./package.json');
 var browserSync = require('browser-sync').create();
 
@@ -36,10 +37,12 @@ gulp.task('css', ['css:compile', 'css:minify']);
 // Minify JavaScript
 gulp.task('js:minify', function() {
   return gulp.src([
+      './node_modules/waypoints/lib/noframework.waypoints.min.js',
       './js/*.js',
-      '!./js/*.min.js'
+      '!./js/*.min.js',
     ])
     .pipe(uglify())
+    .pipe(concat('app.js'))
     .pipe(rename({
       suffix: '.min'
     }))

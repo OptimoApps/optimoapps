@@ -1,10 +1,11 @@
 instances = null;
+sidenav_main_instance = null;
 document.addEventListener('DOMContentLoaded', function() {
     var elem_sidenav = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(elem_sidenav,{edge:'left'});
+    sidenav_main_instance = M.Sidenav.init(elem_sidenav,{edge:'left'});
 
     var elem_scroll = document.querySelectorAll('.scrollspy');
-    M.ScrollSpy.init(elem_scroll);
+    M.ScrollSpy.init(elem_scroll,{scrollOffset:0});
 
     var elem_carousel = document.querySelectorAll('.carousel');
     instances = M.Carousel.init(elem_carousel,{fullWidth: true, indicators:true});   
@@ -18,6 +19,27 @@ document.addEventListener('DOMContentLoaded', function() {
     ell.forEach(function(element){
       element.style.height = (element.clientWidth)+'px';
     });
+
+    var sidenav_links = document.querySelectorAll('.sidenav li a');
+
+    sidenav_links.forEach(function(elem){
+      elem.addEventListener("click",function(){
+        fnCloseSideNav();
+      })
+    })
+    
+    var animated_elements = document.querySelectorAll('.animated');
+    animated_elements.forEach(function(elm) {
+      new Waypoint({
+        element: elm,
+        handler: function(direction) {
+          this.element.classList.add(this.element.getAttribute('animation'));    
+        },
+        offset: '60%'
+      });
+    });
+    
+    
     
     autoplay();
   });
@@ -27,4 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
       element.next();
     }, this);
     setTimeout(autoplay,4000);
+  }
+
+  function fnCloseSideNav(){
+    sidenav_main_instance[0].close();
   }

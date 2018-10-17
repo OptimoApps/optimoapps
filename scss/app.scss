@@ -1,9 +1,13 @@
-$font-size-1rem: 1rem;
+$font-size-1rem: 1.2rem;
 @mixin box($size){
     min-height: $size;
     min-width: $size;
     max-height: $size;
     max-width: $size;
+
+    i{
+        color: white !important;
+    }
 }
 
 body{
@@ -17,7 +21,23 @@ nav a{
     color: darkgrey !important;
 }
 .bg-pattern{
-    background:url('../images/bg-pattern.png'),linear-gradient(to left,#7b4397,#dc2430);
+    background:linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	-webkit-animation: Gradient 5s ease infinite;
+	-moz-animation: Gradient 5s ease infinite;
+    animation: Gradient 5s ease infinite;
+    background-size: 400% 400%;
+}
+.bg-services{
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+}
+.bg-technology{
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+.bg-portfolio{
+    background: #fff !important;
+}
+.bg-contact{
+    background-image: linear-gradient(to top, #b224ef 0%, #7579ff 100%);
 }
 .brand-logo{
     font-size: 20px !important;
@@ -32,6 +52,11 @@ nav a{
 .row-section
 {
     margin-bottom: 0px !important;
+}
+
+section{
+    min-height: 100vh !important;
+    clear: both !important;
 }
 
 .section-heading
@@ -66,6 +91,7 @@ nav a{
     color: darkgray !important;
     font-size: 18px !important;
     font-weight: bold !important;
+    margin-left: 100px !important;
 }
 
 .row-technology
@@ -92,6 +118,42 @@ nav a{
 {
     background-color: none !important;
     padding: 2px 10px !important;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 @media only screen and (max-width:600px){
