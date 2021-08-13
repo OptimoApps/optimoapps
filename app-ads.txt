@@ -1,4 +1,5 @@
 google.com, pub-8817178004711143, DIRECT, f08c47fec0942fa0
+facebook.com, 217663182355707, DIRECT, c3e20eee3f780d68
 
 startapp.com, 0dbccb59ed89cd4ea4618314e5aa8dac, DIRECT
 pubmatic.com, 157559, RESELLER, 5d62403b186f2ace
